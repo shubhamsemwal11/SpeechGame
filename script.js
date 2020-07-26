@@ -14,7 +14,16 @@ recognition.start();
 
 // Capture user speak
 function onSpeak(e) {
-  const msg = e.results[0][0].transcript;
+  let msg = e.results[0][0].transcript;
+
+  if (msg === "xx")
+    msg = "20";
+
+  else if (msg === "xxxviii")
+    msg = "38";
+
+  else if (msg == "Tu")
+    msg = "2";
 
   writeMessage(msg);
   checkNumber(msg);
